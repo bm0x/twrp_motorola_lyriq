@@ -62,7 +62,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libxml2
 
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \

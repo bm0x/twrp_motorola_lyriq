@@ -25,7 +25,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 PRODUCT_PACKAGES += \
-    bootctrl.mt6893
+    bootctrl.mt6893 \
     bootctrl.mt6893.recovery
 
 # MTK PlPath Utils

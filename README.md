@@ -28,7 +28,7 @@
 ```bash
 source build/envsetup.sh
 lunch twrp_lyriq-eng
-mka bootimage -j$(nproc --all)
+mka vendorbootimage -j$(nproc --all)
 ```
 
 

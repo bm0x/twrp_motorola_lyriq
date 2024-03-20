@@ -10,11 +10,29 @@ LOCAL_PATH := device/motorola/lyriq
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Include GSI keys
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# A/B updater updatable partitions list. Keep in sync with the partition list
+# with "_a" and "_b" variants in the device. Note that the vendor can add more
+# more partitions to this list for the bootloader and radio.
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_dlkm
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 32
@@ -88,7 +106,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc
 
 # Partitions
-PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Product characteristics

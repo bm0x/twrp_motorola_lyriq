@@ -102,6 +102,7 @@ jobs:
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/dtbo.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/dtb.img
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
         name: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}

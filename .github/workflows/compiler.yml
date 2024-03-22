@@ -92,7 +92,7 @@ jobs:
         source build/envsetup.sh
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng
         make clean && make clobber
-        mka adbd vendorbootimage -j$(nproc --all)
+        mka adbd recoveryimage -j$(nproc --all)
         cd out/target/product/${{ github.event.inputs.DEVICE_NAME }}
         ls
         
@@ -104,8 +104,6 @@ jobs:
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/dtbo.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/dtb.img
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.lz4
         name: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}

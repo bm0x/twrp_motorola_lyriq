@@ -21,7 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # API
 # Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 33
+PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \

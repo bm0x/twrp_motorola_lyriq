@@ -68,6 +68,10 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := lyriq_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/lyriq
+# Kernel Aditional Flags
+TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
+TARGET_KERNEL_CLANG_COMPILE := true
+NEED_KERNEL_MODULE_RECOVERY := true
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true

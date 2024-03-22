@@ -93,7 +93,7 @@ jobs:
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng
         make clean && make clobber
         mka adbd vendorbootimage -j$(nproc --all)
-        cd workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}
+        cd out/target/product/${{ github.event.inputs.DEVICE_NAME }}
         ls
         
     - name: Upload to Release

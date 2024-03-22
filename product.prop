@@ -18,7 +18,6 @@ ro.lenovo.single_hand=1
 ro.mot.build.customerid=global
 ro.opa.eligible_device=true
 ro.postinstall.fstab.prefix=/product
-ro.product.ab_ota_partitions=boot,system,vendor
 ro.product.gms_premier_tier=true
 ro.product.property_source_order=product,odm,vendor,system_ext,system
 ro.setupwizard.rotation_locked=true

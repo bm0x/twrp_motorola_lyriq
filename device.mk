@@ -146,9 +146,6 @@ PRODUCT_PACKAGES += \
     meta_init.vendor.rc \
     multi_init.rc \
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6893:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6893
-
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libdisplayconfig.qti \
